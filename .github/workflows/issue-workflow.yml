@@ -1,0 +1,22 @@
+name: Issue to Local Backend
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  send-issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print issue info
+        run: |
+          echo "Issue title: ${{ github.event.issue.title }}"
+
+      - name: Send issue title to backend
+        run: |
+          curl -X POST https://abc123.ngrok-free.app/issue \
+            -H "Content-Type: application/json" \
+            -d '{
+              "title": "${{ github.event.issue.title }}"
+            }'
