@@ -1,0 +1,22 @@
+name: Issue Root Cause Analysis
+
+on:
+  issues:
+    types: [opened]   # Trigger only when a new issue is created
+
+jobs:
+  analyze-issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Run Flask RCA script
+        run: |
+          python app.py
