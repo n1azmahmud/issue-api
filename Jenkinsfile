@@ -7,7 +7,7 @@ pipeline {
             when {
                 expression { env.CHANGE_ID != null }
             }
-            steps {
+            steps {{
                 echo "----------------------------------"
                 echo "Hello World 👋"
                 echo "PR detected successfully!"
