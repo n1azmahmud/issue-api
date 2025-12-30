@@ -12,6 +12,7 @@ def receive_issue():
     print("📌 GitHub Issue Title Received:")
     print(issue_title)
     print("===================================")
+    print("Testing Pull Requests")
 
     return jsonify({"status": "received"}), 200
 
