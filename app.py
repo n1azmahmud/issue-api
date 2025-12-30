@@ -13,6 +13,7 @@ def receive_issue():
     print(issue_title)
     print("===================================")
     print("Testing Pull Requests")
+    print("Testing Pull Request 2")
 
     return jsonify({"status": "received"}), 200
 
